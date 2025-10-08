@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -e
 
+#Copy config.yaml if not present
+if [[ ! -f config.yaml && -f config.yaml.example ]]; then
+  cp config.yaml.example config.yaml
+  echo "✅ config.yaml created from config.yaml.example."
+fi
+
 # Activate venv
 if [[ -d "venv" ]]; then
   source venv/bin/activate
