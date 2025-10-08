@@ -17,12 +17,9 @@ gemini:
     project_id: ""
     # Region/location for Vertex AI (e.g., "us-central1"; alternatively set VERTEX_LOCATION or GOOGLE_CLOUD_REGION)
     region: ""
-
-anthropic:
-  api_key_env: ANTHROPIC_API_KEY
-
-xai:
-  api_key_env: XAI_API_KEY
+deepseek:
+  api_key_env: DEEPSEEK_API_KEY
+  #base_url: https://api.deepseek.com
 
 # Model configuration with context limits
 models:
@@ -34,7 +31,7 @@ models:
     # max_context: 1000000
 
     provider: gemini
-    model: gemini-2.5-pro
+    model: gemini-2.5-flash
     max_context: 1000000
     thinking_enabled: true
     thinking_budget: -1
@@ -49,9 +46,14 @@ models:
   # Strategic thinking model
   # For planning and reasoning about security issues
   strategist:
-    provider: openai
-    model: gpt-5
-    max_context: 256000
+    # provider: openai
+    # model: gpt-5
+    # max_context: 256000
+    # plan_reasoning_effort: medium
+    # hypothesize_reasoning_effort: high
+    provider: deepseek
+    # for non-thinking mode use deepseek-chat
+    model: deepseek-reasoner
     plan_reasoning_effort: medium
     hypothesize_reasoning_effort: high
   
