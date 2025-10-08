@@ -19,3 +19,9 @@ poetry.lock
 
 # IDE
 .vscode/
+
+#scope files
+*-scope.txt
+
+#python venv
+venv/
