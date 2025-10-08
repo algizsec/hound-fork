@@ -55,7 +55,7 @@ echo "✅ Audit scope extracted and saved to ${project_name}-scope.txt"
 echo
 echo "------------------------------"
 echo "📋  Extracted Audit Scope:"
-echo "$audit_scope" | tr ',' '\n' | sed 's/^/  • /'
+echo "$audit_scope" | tr ',' '\n' | sed 's/^/  /'
 echo "------------------------------"
 echo
 
